@@ -1,0 +1,57 @@
+<div class="item">
+                                      
+        <div class="gd-box-info text-center">
+            <div class="product-men women_two bot-gd">
+                <div class="product-googles-info slide-img googles">
+                    <div class="men-pro-item">
+                        <div class="men-thumb-item"  >
+                                <img src={{block.hash}} style="min-height: 350px; max-height: 350px;" alt="Card image cap">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-product">
+
+                            <div class="info-product-price">
+                                <div class="grid">
+                                    <div class="product_price">
+                                            
+                                          <br>
+                                          <h6 class="money">{{block.productname}}</h6>
+                                          <h6>
+                                              <br>
+                                              <a class="money ">Registeration Amount :   </a>
+                                          </h6>
+                                          <h4>
+                                              <a routerLink="/home" href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{block.minBid}} Bid Deals </a>
+                                          </h4>
+                                            
+                                        
+                                        <br>
+                                        <h4>
+                                            <a routerLink="/home" href="">{{block.registered}}/{{block.required}} Registered </a>
+                                        </h4>
+                                        <br>
+                                        <div *ngIf="block.ismeetrequired">
+                                         <div style="margin-top:10px ">
+                                             Winner: {{block.winner}}
+                                              <br>
+                                              <br>
+                                         </div>
+                                        </div>
+                                        
+                                        <h6 *ngIf="!block.ismeetrequired">Auction was not started due to minimum bidders requirement was not met</h6>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="panel panel-flat">
+    
+       <div class="panel-body">
+         <div class="row" style="margin-bottom: 10%">
+           <div class="col-sm-4">
+               <div class="table-responsive tableoverflow">
+                   <table class="table table-bordered table-framed fixed_header">
+                       <thead>
+                           <tr>
+                               <th scope="col">Auction ID</th>
+                               <th scope="col">ProductName</th>
+                               <th></th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr  class="trhighlighting" *ngFor="let i of auctiondet">
+                               <th>{{i._Auctionid}}</th>
+                               <td>{{i.Productname}}</td>
+                               <td ><button class="btn btn-clr" (click)="registrationDetails(i._Auctionid)" style="cursor: pointer;">click</button></td>
+                           </tr>
+                       </tbody>
+                   </table>
+                 </div>
+           </div>
+           <div class="col-sm-8">
+               <div class="table-responsive tableoverflow">
+                   <table class="table table-bordered table-framed">
+                       <thead>
+                           <tr>
+                             <th scope="col">Registered Accounts on Auction:&nbsp;{{auction_ID}}</th>
+                             <th scope="col">Registeration Amount</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr class="trhighlighting" *ngFor="let i of regdet">
+                             <td>{{i.Address}}</td>
+                             <td>{{i.minbid}}</td>
+                           </tr>
+    
+                         </tbody>
+                   </table>
+                   <p id="noresult" hidden></p>
+                 </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    
+    </div>

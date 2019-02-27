@@ -1,0 +1,113 @@
+<div>
+  <div *ngIf="noMyExpDeal" class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <h5>No Deals to Show</h5>
+    </div>
+    <div class="col-sm-2"></div>
+</div>      
+<div id="myexpdealcontainer">
+        <div *ngFor="let expDeal of myExpDealArray" class="row" >
+                <div class="col-md-8" style="margin-top: 20px">
+                    <div class="well">
+                        <div class="heading">
+                            <h4>{{expDeal.productname}} DEAL | WINNER {{expDeal.winner}} </h4><small> {{expDeal.expDate}}</small> 
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src={{expDeal.ipfsimghash}} alt="" style="max-width: 100%">
+                            </div>
+                            <div class="col-md-4"> <br>
+                                <h4 class="text-secondary">{{expDeal.productname}}</h4>
+                                <p class="text-muted">Highest Deal: {{expDeal.winamount}} Bid Deal</p>
+                                <p class="text-muted">Bid Reset Time: {{expDeal.resettime}} Seconds</p>
+                                <p class="text-muted">Bid Type: {{expDeal.bidincrement}} Bid Deal</p>
+                                <p class="text-muted">Base Price: {{expDeal.baseprice}} Bid Deal</p>
+                                <p class="text-muted">Minimum Required Count:{{expDeal.required}}</p>
+                                <p class="text-muted">Registered Count: {{expDeal.registered}}</p>
+                            </div>
+                            
+                            <div class="col-md-2 btn-danger1" >
+                                <small>You Spent {{expDeal.totalBidAmount}}</small>
+                                <h5>Buy Now</h5>
+                                <h3>@ 5500 Rs</h3>
+                                <small>0 Days Left</small>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br><br>
+
+                        </div>
+                        <div class="row text-right">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <button class="btn btn-danger" (click)="bid_details(expDeal.auctionid,expDeal.description)" >MORE DETAILS</button>
+                                
+                                <!-- <button class="btn btn-danger">DISCOUNT FEATURES</button> -->
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>  
+</div>
+<div class="modal fade" id="child_content_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" style="padding-left: 10px">Products Description</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" ></div> 
+        <div class="col-md-12" style="padding:30px;">
+          <i id="descript"></i>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" style="padding-left: 10px">BID History</h5>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          
+
+              <div class="example-container mat-elevation-z8">
+                <table class="table table-bordered" >
+                    <thead id='child'>
+                        <tr>
+                          <th>Sno</th>
+                          <th>User</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody id='child'>
+                            <tr *ngFor="let i of modal_content;let x=index">
+                                <td>{{x+1}}</td>
+                                <td>{{i.user}}</td>
+                                <td>{{i.price}}</td>
+                              </tr>     
+                            </tbody>
+                      </table>
+
+                
+        </div>
+          </div>
+          <div class="col-sm-2"></div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

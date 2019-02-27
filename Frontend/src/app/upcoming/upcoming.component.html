@@ -1,0 +1,82 @@
+<div *ngIf="isUpcoming">
+<div class="item" >                                    
+        <div class="gd-box-info text-center">
+            <div class="product-men women_two bot-gd">
+                <div class="product-googles-info slide-img googles">
+                    <div class="men-pro-item">
+                        <div class="men-thumb-item">
+                            <img src={{block.hash}} style="min-height: 350px; max-height: 350px;" alt="Card image cap">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+                        </div>
+                        <div class="item-info-product">
+
+                            <div class="info-product-price">
+                                <div class="grid_meta">
+                                    <div class="product_price">
+                                            <h6 class="money">{{block.productname}}</h6>
+                                            <br>
+                                        <h6>
+                                                
+                                            <a class="money ">Registeration Amount :   </a></h6>
+                                            <h4>
+                                                    <a routerLink="/home" href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{block.minBid}} Bid Deals </a>
+                                                </h4>
+                                            <br>
+                                            <span *ngIf="block.waitforlive">
+                                                
+                                            </span>
+                                            
+                                            <h6 *ngIf="block.isclosed" style="color:red;">Registeration Closed</h6>
+                                        <h4>
+                                            <a routerLink="/home" href="">{{block.registered}}/{{block.required}} Registered </a>
+                                        </h4>
+                                        <div *ngIf="block.timertxt == 1" class="grid-price mt-2">
+                                            <div *ngIf="!block.btnhide">
+                                                <span *ngIf="block.isTimeTextforregstart" class="money ">Auction Registeration Will start @ {{block.regstarttime}}</span>
+                                                <span *ngIf="!block.isTimeTextforregstart" class="money ">Auction Registeration Will Start in 
+                                                    <h5 >{{soon_reg_start_hour_shower|number:'2.0'}}:{{soon_reg_start_min_shower|number:'2.0'}}:{{soon_reg_start_sec_shower|number:'2.0'}}&nbsp;&nbsp;</h5>
+                                                </span>
+                                            </div>    
+
+                                        </div>                                                                    
+                                        <div *ngIf="block.timertxt == 2" class="grid-price mt-2">
+                                            <span *ngIf="block.isTimeText" class="money ">Auction Registeration Will be closed @ {{block.regendtime}}</span>
+                                            <span *ngIf="!block.isTimeText" class="money">Auction Registeration Will be closed In 
+                                                    <h5>{{soon_reg_end_hour_shower|number:'2.0'}}:{{soon_reg_end_min_shower|number:'2.0'}}:{{soon_reg_end_sec_shower|number:'2.0'}}</h5>
+                                            </span>
+                                            <br>
+                                            <a *ngIf="block.regbtnshow" (click)="preregisteration(block.auctionid,block.minBid);" style="color: #fff;" class="link-product-add-cart">&nbsp;{{block.regtxt}}!&nbsp;</a>
+                                        </div>
+                                        <div class="alert alert-info alert-dismissible" *ngIf="notification">
+                                            <a (click)="dismiss_notification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong>{{notification_content}}</strong>&nbsp;&nbsp;&nbsp; 
+                                        </div>
+                                        <div *ngIf="block.timertxt == 3" class="grid-price mt-2">
+                                            <div *ngIf="block.isRequiredmet">
+                                                <span class="money" *ngIf="block.isTimeText">Auction Will Be On Live @ {{block.aucstarttime}}</span>
+                                                <span class="money" *ngIf="!block.isTimeText">Auction Will Be On Live In
+                                                        <h5 >{{soon_auc_start_hour_shower|number:'2.0'}}:{{soon_auc_start_min_shower|number:'2.0'}}:{{soon_auc_start_sec_shower|number:'2.0'}}&nbsp;&nbsp;</h5>
+                                                </span>
+                                            </div>
+                                            <div *ngIf="!block.isRequiredmet">
+                                                <span class="money">Auction closed as minimum bidders requirement was not met</span>
+                                            </div>
+                                        </div>                                                                    
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+</div>

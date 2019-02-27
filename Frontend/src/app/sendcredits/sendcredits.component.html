@@ -1,0 +1,70 @@
+<!-- <div class="col-sm-1"></div>
+<div class="col-sm-10 auction">
+<div class="panel panel-default ">
+   <div class="panel-heading text-size" style="background-color: #273246;color: white">SEND CREDITS</div>
+   <div class="panel-body">
+         <div class="col-sm-3"></div>
+         <form class="form-horizontal col-sm-7" action="#">
+          <fieldset class="content-group">
+            <div class="form-group">
+              <div class="col-lg-10">
+                <input type="text" placeholder="Receiver Address" class="form-control" id="raddress" #recevieraddress>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10">
+                <input type="text" placeholder="No.of.credits" class="form-control" id="creditsid" #creadits>
+                <div class="text-center">
+                  <br><button type="button" class="btn btn-success btn-lg" (click)="sendcredits(recevieraddress.value,creadits.value)">Send&nbsp;<i class="icon-transmission"></i></button>
+                </div>
+                <br>
+                <p *ngIf="validation_error" style="text-align: center; color: red">Enter all details correctly</p>
+                <p *ngIf="successful"  style="text-align: center; color: green">Credits sent successfully </p>
+                <p *ngIf="unable_to_perform"  style="text-align: center; color: red">Unable to perform this Transaction</p>
+                <p *ngIf="revert_error"  style="text-align: center; color: red">Transaction Failed</p>
+              </div>
+            </div>
+            </fieldset>
+      </form>
+   </div>
+</div>
+</div> -->
+<div class="container">
+
+  <div class="row">
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+         <div class="form-style-10">
+             <h1 style="text-align: center">SEND CREDITS</h1>
+             <div *ngIf="credittransferrnotify==1" class="alert alert-success alert-dismissible" >
+                 <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                 <strong>Success!</strong> Credits Sent
+             </div>
+             <div class="form-group">
+                 <div class="section"><span>1</span>Receiver</div>
+                 <div class="inner-wrap">
+                     <label>Ethereum Address<input type="text" placeholder="Receiver Address" class="form-control" id="raddress" #recevieraddress></label>
+                 </div>
+                 <div class="section"><span>2</span>Credits</div>
+                 <div class="inner-wrap">
+                     <label>Count<input type="text" placeholder="No.of.credits" class="form-control" id="creditsid" #creadits></label>
+                 </div>
+                           
+                 <div *ngIf="credittransferrnotify==2" class="alert alert-danger alert-dismissible">
+                     <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     <strong>Invalid Credentials!</strong> 
+                 </div>
+                 <br><br>
+                 <div class="button-section" style="text-align: center;">
+                     <br><button id="buttonid" (click)="sendcredits(recevieraddress.value,creadits.value)">Send&nbsp;<i class="icon-transmission"></i></button>
+                 </div>
+                 <div *ngIf="credittransferrnotify==3" class="alert alert-danger alert-dismissible">
+                   <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                   <strong>Unable to Send!</strong> 
+               </div>
+            </div>
+         </div>
+     </div>
+     <div class="col-md-3"></div>
+   </div>
+</div>

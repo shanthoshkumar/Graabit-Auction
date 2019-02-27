@@ -1,0 +1,241 @@
+<html>
+    <body>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="alert alert-info alert-dismissible" *ngIf="notification">
+            <a (click)="dismiss_notification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Info!</strong>&nbsp;&nbsp;&nbsp;Please Login to Continue.
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div>
+  <div class="banner-top container-fluid" id="home">
+    <!-- banner -->
+    <div class="banner">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+
+                <!-- start of the single carousel-->
+                <div class="carousel-item active">
+                    <div class="carousel-caption text-center">
+                        <h3>DEAL OF THE WEEK / VACATION
+                            <span>SINGAPORE HOLIDAY @ 50000 Rs</span>
+                        </h3>
+                        <a href="" routerLink='/home' class="btn btn-sm animated-button gibson-three mt-4">43/100 Registered | STARTS @ 2 PM FRIDAY</a>
+                        <br><br>
+                        <a (click)="show_notification();" class="btn btn-lg animated-button gibson-three mt-4" style="background-color: #fff; color:#17617e"><strong>Register Now!</strong></a>
+                    </div>
+                </div>
+                <!-- start of the single carousel-->
+
+                <!-- start of the single carousel-->
+                <div class="carousel-item item2">
+                    <div class="carousel-caption text-center">
+                        <h3>DEAL OF THE WEEK / VACATION
+                            <span>SINGAPORE HOLIDAY @ 50000 Rs</span>
+                        </h3>
+                        <a href="" routerLink='/home' class="btn btn-sm animated-button gibson-three mt-4">43/100 Registered | STARTS @ 2 PM FRIDAY</a>
+
+                    </div>
+                </div>
+                <!-- start of the single carousel-->
+
+                <!-- start of the single carousel-->
+                <div class="carousel-item item3">
+                    <div class="carousel-caption text-center">
+                        <h3>DEAL OF THE WEEK / VACATION
+                            <span>SINGAPORE HOLIDAY @ 50000 Rs</span>
+                        </h3>
+                        <a href="" routerLink='/home' class="btn btn-sm animated-button gibson-three mt-4">43/100 Registered | STARTS @ 2 PM FRIDAY</a>
+
+                    </div>
+                </div>
+                <!-- start of the single carousel-->
+
+                <!-- start of the single carousel-->
+                <div class="carousel-item item4">
+                    <div class="carousel-caption text-center">
+                        <h3>DEAL OF THE WEEK / VACATION
+                            <span>SINGAPORE HOLIDAY @ 50000 Rs</span>
+                        </h3>
+                        <a href="" routerLink='/home' class="btn btn-sm animated-button gibson-three mt-4">43/100 Registered | STARTS @ 2 PM FRIDAY</a>
+                    </div>
+                </div>
+                <!-- start of the single carousel-->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!--//banner -->
+    </div>    
+  </div>
+
+  <section>
+      <div class="">
+          <div class="row">
+              <div class="col-md-12">
+                 <!-- <div class="black-box text-center">
+                 
+                 <div style="border-bottom: 1px solid #fff">
+                     <img src="./assets/images/tag.png" alt="" width="100px" style="filter: invert(100%); padding: 20px">
+                      100% Fair and Authentic opportunity for fellow Indians to grab unbelievable discounts on their choicest/Dream products
+                 </div>
+                 
+                 <div style="border-bottom: 1px solid #fff">
+                     <img src="./assets/images/full-items-inside-a-shopping-bag.png" alt="" width="100px" style="filter: invert(100%); padding: 20px">
+                      Discounts could range upto 90% or more for the winners. A Unique platform where every participant is a winner
+                 </div>
+                 <div style="border-bottom: 1px solid #fff">
+                     <img src="./assets/images/bitcoin.png" alt="" width="100px" style="filter: invert(100%); padding: 20px">
+                      India's first & only Blockchain based Deal Auctions portal.
+                 </div>
+                 <div style="padding: 30px">
+                     Graabbit....!!!!
+                 </div>
+                 
+              </div> -->
+              <div class="container">
+                  
+                  <br>
+                    <h3 style="text-align: center; font-size:3em; font-weight: 500;line-height: 3.1;">What we offer</h3> <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="./assets/images/tag2.png" class="avatar" alt=""><br>
+                                <p><span><br></span>100% Fair and Authentic opportunity for fellow Indians to grab unbelievable discounts on their choicest/Dream products</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/bag2.png" class="avatar" alt="">
+                                <p><span><br></span>Discounts could range upto 90% or more for the winners. A Unique platform where every participant is a winner</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/bitcoin.png" class="avatar" alt=""><br>
+                                <p><span><br></span>India's first & only Blockchain based Deal Auctions portal.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+
+  </section>
+
+
+  <!--//banner-sec-->
+  <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+      <div class="container-fluid">
+          <div class="inner-sec-shop px-lg-4 px-3">
+
+        <div class="slider-img mid-sec">
+                <h3 class="tittle-grraabit my-lg-4 my-4">LIVE DEALS </h3>
+                <div *ngIf="noActiveDeal" class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <!-- <h3>Currently No Deals In Live</h3> -->
+                        </div>
+                        <div class="col-sm-4"></div>
+                </div>
+
+                <div class="mid-slider">
+                        <div class="row" id="progress_1">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <img src="../../assets/images/30.gif">                           
+                                </div>
+                                <div class="col-sm-4"></div>
+                        </div>
+                    <div id="target_1" >
+                        <div  *ngFor="let liveDeal of livDeals" id="parent_1" style="width: 340px; height:373px;margin-right: 20px;">
+                                <div>
+                                    <app-live [liveDeal]='liveDeal'></app-live>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            <br>
+        </div>
+<br><br>
+              <div class="slider-img mid-sec" id="MyUpcomingElement">
+                  <h3 class="tittle-grraabit my-lg-4 my-4">UPCOMING DEALS </h3>
+                  <!--//banner-sec-->
+                <div *ngIf="noUpcomingDeal" class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <!-- <h3>Currently No Deals In Upcoming</h3> -->
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>        
+                  <div class="mid-slider">
+                        <div class="row" id="progress_2">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <img src="../../assets/images/30.gif">                           
+                                </div>
+                                <div class="col-sm-4"></div>
+                        </div>
+                    <div id="target_2">
+                     <div  *ngFor="let key of upcomingDeals" id="parent_2" style="width: 340px; height:373px;margin-right: 20px;">
+                            <div>
+                                <app-upcoming [start]=key></app-upcoming>
+                            </div>
+                      
+                    </div>
+                </div>
+            </div>
+              </div>
+              <br><br>
+
+                <div class="slider-img mid-sec">
+                        <h3 class="tittle-grraabit my-lg-4 my-4">CLOSED DEALS </h3>
+                        <!--//banner-sec-->
+                         <div class="row" *ngIf="nocloseddeal">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <!-- <h3>No Deals to Show</h3> -->
+                                </div>
+                                <div class="col-sm-4"></div>
+                         </div>
+                        
+                        <div class="mid-slider"> 
+                                <div class="row" id="progress_3">
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-4">
+                                            <img  src="../../assets/images/30.gif">                           
+                                        </div>
+                                        <div class="col-sm-4"></div>
+                                </div>
+                          <div id="target_3">
+                            <div  *ngFor="let key of closeddeals" id="parent_3" style="width: 340px; height:373px;margin-right: 20px;">
+                                <div>
+                                    <app-closed [start]=key></app-closed>
+                                </div>
+                            </div>
+                            </div>
+                         </div>
+                </div>
+                      </div>
+
+                      
+          </div>
+  </section>
+</div>
+
+</body>
+</html>

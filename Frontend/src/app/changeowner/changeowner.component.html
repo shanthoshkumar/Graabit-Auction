@@ -1,0 +1,93 @@
+<!-- <div class="col-sm-1"></div>
+<div class="col-sm-10 auction">
+   <div class="panel panel-default" >
+      <div class="panel-heading text-size" style="background-color: #273246;color: white"><b>CHANGE OWNERSHIP</b></div>
+      <div class="panel-body" style="text-align:center">
+          <div class="row">
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+   <form>
+       <div class="row">
+
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label class="control-label col-sm-12">Current Owner</label>
+                                <div class="col-lg-12">
+                                    <input type="text"  class="form-control" id="addr" autocomplete="off" readonly>
+                                </div>
+                              </div>                         
+                        </div>
+                        <div class="col-sm-2 icon" >
+                           <i style="margin: 35px 0 35px 0;" class="icon-transmission"></i>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label class="control-label col-sm-12">To Address</label>
+                                <div class="col-lg-12">
+                                    <input type="text" class="form-control" id="toadd" #address  placeholder="Enter To Address">
+                                </div>
+                              </div>
+                     
+                        </div>
+             </div>
+           </form>
+             <div class="row" style="text-align: center">
+               <br><button (click)="transferOwnership(address.value)" class="btn btn-success" id="btn">&nbsp;<i class="fas fa-sync-alt"></i>&nbsp;&nbsp;Change Owner</button>
+             </div>
+             <br>
+             <p *ngIf="successful_message" style="text-align: center;color: green;">Ownership Transferred Successfully</p>
+             <p *ngIf="validation_error" style="text-align: center;color: red;">Please Try again with valid detail</p>
+             <p *ngIf="unableto_transfer" style="text-align: center;color: red;">Unable to Transfer</p>
+             <p *ngIf="accountaddress_error" style="text-align: center;color: red;">Enter account address correctly</p>
+
+</div>
+<div class="col-sm-2"></div>
+
+
+
+          </div>
+
+   </div>
+   </div>
+</div>
+ -->
+ <div class="container">
+   <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+          <div class="form-style-10">
+              <h1 style="text-align: center">Ownership Transfer</h1>
+              <div *ngIf="ownertransfernotify==1" class="alert alert-success alert-dismissible" >
+                  <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Success!</strong> ownership Transferred
+              </div>
+              <div class="form-group">
+                  <div class="section"><span>1</span>Current Owner</div>
+                  <div class="inner-wrap">
+                      <label>Ethereum Address <input type="text" id="addr" name="field1"  readonly/></label>
+                  </div>
+                  <div class="section"><span>2</span>New Owner</div>
+                  <div class="inner-wrap">
+                      <label>Ethereum Address<input type="text" id="toadd" name="field1" #address placeholder="Enter An Ethereum Address" /></label>
+                  </div>
+                            
+                  <div *ngIf="ownertransfernotify==2" class="alert alert-danger alert-dismissible">
+                      <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Invalid Credentials!</strong> 
+                  </div>
+                  <br><br>
+                  <div class="button-section" style="text-align: center;">
+                      <br><button id="buttonid" (click)="transferOwnership(address.value)">&nbsp;<i class="fas fa-sync-alt"></i>&nbsp;&nbsp;Transfer</button>
+                  </div>
+                  <div *ngIf="ownertransfernotify==3" class="alert alert-danger alert-dismissible">
+                    <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Unable to Transfer!</strong> 
+                </div>
+             </div>
+          </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  } 
+  .modal-content {
+      border-radius: 1;
+  }
+  thead,tbody{
+    background: linear-gradient(135deg, #17617e 0%, #f3ec0b 100%);
+  text-align: center;
+  }

@@ -1,0 +1,104 @@
+.btn-danger {
+    border-radius: 0px;
+    background-color: #17617e;
+}
+
+.fixed-side-menu-list {
+    list-style: none;
+    font-size: 0;
+}
+
+.fixed-side-menu-list li {
+    margin-bottom: 2px;
+}
+
+.fixed-side-menu-list li a {
+    border-left: 2px solid #a2a2a2;
+    font-size: 12px;
+    color: #a2a2a2;
+    line-height: 12px;
+    padding: 24px 10px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.8s ease;
+}
+
+.fixed-side-menu-list li.active a {
+    border-left-color: #17617e;
+    color: #17617e;
+}
+
+.fixed-side-menu-list li.active a {
+    border-left-color: #17617e;
+    color: #17617e;
+}
+
+.fixed-side-menu-list a:hover {
+    border-left-color: #111;
+    color: #111;
+}
+
+.list-type5 {
+
+    margin: 0 auto;
+}
+
+.list-type5 ol {
+    list-style-type: none;
+    /* list-style-type: upper-roman; */
+    /*IE 7- hack*/
+    margin: 0;
+    margin-left: 1em;
+    padding: 0;
+    counter-reset: li-counter;
+}
+
+.list-type5 ol li {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 0.5em;
+    background: #17617e;
+    background: -moz-linear-gradient(-45deg, #17617e 0%,  100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #17617e), color-stop(100%,));
+    background: -webkit-linear-gradient(-45deg, #17617e 0%,  100%);
+    background: -o-linear-gradient(-45deg, #17617e 0%, 100%);
+    background: -ms-linear-gradient(-45deg, #17617e 0%,  100%);
+    background: linear-gradient(135deg, #17617e 0%,  100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3da933', endColorstr='#eee70e', GradientType=1 );
+    padding-left: 58px;
+}
+
+.list-type5 a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.list-type5 li:hover {
+    box-shadow: inset -1em 0 #17617e;
+    -webkit-transition: box-shadow 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 0.5s;
+}
+
+.list-type5 ol li:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #17617e;
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 9;
+    overflow: hidden;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+}

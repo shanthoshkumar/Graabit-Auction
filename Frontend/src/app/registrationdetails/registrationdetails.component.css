@@ -1,0 +1,25 @@
+.text-size{
+    font-size: 15px;
+    font-weight: bolder;
+ }
+ thead{
+     background-color: #17617e;
+     color: white;
+ }
+ .tableoverflow{
+    overflow-y:auto;
+    max-height: 600px
+ }
+ #noresult{
+     text-align: center;
+     margin-top: 20px;
+     color: dimgray;
+     font-size: 13px
+ }
+ .trhighlighting:hover{
+    background-color: bisque
+ }
+ .btn-clr{
+    background-color: #17617e;
+    color: white
+ }

@@ -1,0 +1,94 @@
+
+<div class="">
+
+  <div class="row">
+    <!-- <div class="col-md-3"></div> -->
+    <div class="col-sm-1"></div>
+<div class="col-sm-10">
+      <div class="form-style-10">
+        <h1 style="text-align: left;">FINALIZE RESULT</h1>
+        <div *ngIf="finalizenotify==1" class="alert alert-success alert-dismissible" >
+            <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success !</strong>&nbsp;&nbsp;Auction Finalized.
+        </div>
+        <div *ngIf="finalizenotify==2" class="alert alert-warning alert-dismissible" >
+            <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Failed To Finalize!</strong>
+        </div>
+        <div class="panel-body">        
+          <div class="table-responsive">
+            <!-- <table class="table table-bordered table-framed">
+                <thead>
+                    <tr>
+                      <th>Auction Id</th>
+                      <th>Product Name </th>
+                      <th>Start Time </th>
+                      <th>End Time </th>
+                      <th>Base Price </th>
+                      <th>Bid Increment </th>
+                      <th>Minimum Bid </th>
+                      <th>Last Bidder </th>
+                      <th>Reset Time </th>
+                      <th>Last Bid Amount </th>
+                      <th> </th>
+                    </tr>
+                </thead>
+                <tbody id="scrollit">
+                    <tr class="trhighlighting" *ngFor="let element of finalizeresult">                
+                      <td>{{ element.auctionid }}</td>
+                      <td>{{ element.productname }}</td>
+                      <td>{{ element.start_time }}</td>
+                      <td>{{ element.end_time }}</td>
+                      <td>{{ element.basePrice }}</td>
+                      <td>{{ element.bidIncrement }}</td>
+                      <td>{{ element.minBid }}</td>
+                      <td>{{ element.lastBidder }}</td>
+                      <td>{{ element.resetTime }}</td>
+                      <td>{{ element.lastBidDetails_amount }}</td>
+                      <td><button id="buttonid" (click)="setresult(element.auctionid)" *ngIf="!element.buttonshow">Finalize</button></td>
+                    </tr>
+                </tbody>
+            </table> -->
+            <table class="fixed_header"> 
+              <thead>
+                  <tr>
+                    <th>Auction Id</th>
+                    <th>Product Name </th>
+                    <th>Start Time </th>
+                    <th>End Time </th>
+                    <th>Base Price </th>
+                    <th>Bid Increment </th>
+                    <th>Minimum Bid </th>
+                    <th>Last Bidder </th>
+                    <th>Reset Time </th>
+                    <th>Last Bid Amount </th>
+                    <th> </th>
+                  </tr>
+              </thead>
+              <tbody style="min-height: 600px;">
+                  <tr class="trhighlighting" *ngFor="let element of finalizeresult">                
+                      <td>{{ element.auctionid }}</td>
+                      <td>{{ element.productname }}</td>
+                      <td>{{ element.start_time }}</td>
+                      <td>{{ element.end_time }}</td>
+                      <td>{{ element.basePrice }}</td>
+                      <td>{{ element.bidIncrement }}</td>
+                      <td>{{ element.minBid }}</td>
+                      <td>{{ element.lastBidder }}</td>
+                      <td>{{ element.resetTime }}</td>
+                      <td>{{ element.lastBidDetails_amount }}</td>
+                      <td><button id="buttonid" (click)="setresult(element.auctionid)" *ngIf="!element.buttonshow">Finalize</button></td>
+                    </tr>
+              </tbody>
+          </table>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="col-sm-1"></div>
+
+
+  </div>
+</div>

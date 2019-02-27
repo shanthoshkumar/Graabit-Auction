@@ -1,0 +1,87 @@
+<div>
+  
+        <div class="container">
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-style-10">
+                        <h1>Sign Up Now!<span>Sign up and And buy your fav deals!</span></h1>
+                        <div *ngIf="signupnotify==1" class="alert alert-success alert-dismissible" >
+                            <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Success!</strong> Now You can login.
+                        </div>
+                        <div class="form-group">
+                            <div class="section"><span>1</span>User Name</div>
+                            <div class="inner-wrap">
+                                <label>Please Enter A Unique Name <input type="text" id="username"name="field1" #username /></label>
+                            </div>
+    
+                            <div class="section"><span>2</span>Email </div>
+                            <div class="inner-wrap">
+                                <label>Email Address <input type="email" id="emailidid" class="form-control" aria-describedby="emailHelp" required autocomplete="off" name="field3" #emailId minlength="4"/></label>
+                            </div>
+    
+                            <div class="section"><span>3</span>Passwords</div>
+                            <div class="inner-wrap">
+                                <label>Password <input type="password" id="password1" name="field5" #password1 minlength="4"/></label>
+                                <label>Confirm Password <input type="password" id="password2" name="field6" #password2 minlength="4"/></label>
+                            </div>
+                            <div class="section"><span>4</span>Ethereum Private Key</div>
+                            <div class="inner-wrap">
+                                <label>Private Key<input type="password" id="privatekeyid" name="prikey" #privatekeyinsert/></label><br>
+                                <small>Don't Have one?, Click here</small>
+                                <label class="switch">
+                                    <input type="checkbox" id="newtoethswitch" (click)="switchClick()"/>
+                                    <span class="slider round"></span>
+                                </label>
+                                <div *ngIf="prikeynotify" class="alert alert-info alert-dismissible" >
+                                    <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Success!</strong> Please Copy the above privatekey and keep somewhere safe.
+                                </div>
+                                <div *ngIf="prikeynotify" class="alert alert-warning alert-dismissible" >
+                                    <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Note!</strong> Do Not Share This With Anyone! 
+                                </div>
+                            </div>
+                            <div *ngIf="signupnotify==2" class="alert alert-danger alert-dismissible">
+                                <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Invalid Credentials!</strong> 
+                            </div>
+                            <div *ngIf="formerror!==''" class="alert alert-danger alert-dismissible">
+                                <a (click)="formerror=''" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>{{formerror}}</strong> 
+                            </div>                        
+                            <br><br>
+                            <div class="button-section">
+                                <input type="button" (click)="signup(username.value,emailId.value,password1.value,password2.value,privatekeyinsert.value)" value="Sign Up" />
+                                <span class="privacy-policy">
+                                   <input type="checkbox" name="field7" id="checkboxid"> You agree to our Terms and Policy. 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-6">
+                    <section style="margin-top: 50px"></section>
+    
+                    <div class="list-type5">
+                        <ol>
+                            <li><a >REGISTER </a></li>
+                            <li><a >BUY DEAL PACK </a></li>
+                            <li><a >SELECT YOUR GRAB DEAL </a></li>
+                            <li><a >DEAL GOES LIVE IF ACTIVATED  </a></li>
+                            <li><a >BID FOR DEAL  </a></li>
+                            <li><a >END OF ACTIVE DEAL  </a></li>
+                            <li><a >HIGHEST BID WINS  </a></li>
+                            <li><a >OTHERS GRAB DEAL @ DEAL PRICE  </a></li>
+                            <li><a >BUY MORE GRAB DEAL PACKS  </a></li>
+                            <li><a >GRAB WEEKLY ACTIVE DEALS  </a></li>
+                        </ol>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <br><br>
+    </div>
+    
+    

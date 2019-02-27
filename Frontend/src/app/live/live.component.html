@@ -1,0 +1,71 @@
+<div *ngIf="isLive">
+    <div class="item">
+      <div class="gd-box-info text-center">
+        <div class="product-men women_two bot-gd">
+          <div class="product-googles-info slide-img googles">
+            <div class="men-pro-item">
+              <div class="men-thumb-item"  >
+                <img src={{ipfsimghash}}  style="min-height: 350px; max-height: 350px;" alt="Card image cap">
+                <div class="men-cart-pro">
+                  <div class="inner-men-cart-pro">
+                  </div>
+                </div>
+                <span class="product-new-top">New</span>
+              </div>
+  
+              <div class="item-info-product">
+                <div class="info-product-price">
+                  <div class="grid_meta">
+                    <div class="product_price">
+                      <h6 class="money ">{{product_name}}</h6>
+                      <h6 style="margin-top: 2px">
+                        <a routerLink="/home" href="" style="margin-top: 4px;"><span><h6 style="text-align: center;">({{registered}}/{{required}}) Registered</h6></span></a>
+                      </h6>
+                      <h6 style="margin-top: 6px">
+                        <a class="money ">Registeration Amount :</a>
+                      </h6>
+                      <h6>
+                        <a routerLink="/home" href="" style="margin-top: 2px;"><span><h6 style="text-align: center;">{{minimumbid}} Bid Deals </h6></span></a>
+                      </h6>
+  
+                      <h6 class="text-muted" style="margin-top: 4px">Bid Reset Time: {{resettime}} Seconds </h6>
+                      <h6 class="text-muted" style="margin-top: 4px">Bid Type: {{bidincrement}} Bid Deals</h6>
+                      <h6 class="text-muted" style="margin-top: 4px">Base Price:{{basePrice}} Bid Deals</h6>
+                      <span *ngIf="Bidder_name!=''">
+                        <h6 style="margin-top: 8px"> Last Bidder: {{Bidder_name}}</h6>
+                        <h6 style="margin-top: 4px"> Bidded Amount: {{highestbidamount}} Deals</h6>
+                      </span>
+                      <div class="alert alert-info alert-dismissible" *ngIf="canShowNotification">
+                        <a (click)="dismissNotification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ notificationContent }}</strong>&nbsp;&nbsp;&nbsp; 
+                      </div>
+                      <div>
+                        <p *ngIf="progressing">Your Transaction Is In Progress ...</p>
+                      </div>
+                      <div class="alert alert-info alert-dismissible" *ngIf="canShowBiddedresult">
+                        <a (click)="dismiss_canShowBiddedresult()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ biddedresultContent }}</strong>&nbsp;&nbsp;&nbsp; 
+                      </div>
+                      <span *ngIf="isRegMet">
+                        <h6 style="margin-top: 8px;color:#17617e;text-align: center;"> {{displayTime}}&nbsp;&nbsp; left</h6>
+                        <button *ngIf="!isBasePriceReached" class="btn btn-danger btn-block" style="margin-top: 6px" (click)="manualBidding()">{{nextbidamount}} BID NOW</button>
+                        <h6 *ngIf="isBasePriceReached" style="margin-top: 4px">Base Price Reached!</h6>
+                      </span>
+                      <span *ngIf="!isRegMet">
+                          <h6 style="margin-top: 4px">Auction was not started due to minimum bidders requirement was not met</h6>
+                      </span>
+                      <div class="alert alert-info alert-dismissible" *ngIf="loginNotification">
+                        <a (click)="dismiss_loginNotification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Login to Continue!</strong>&nbsp;&nbsp;&nbsp; 
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

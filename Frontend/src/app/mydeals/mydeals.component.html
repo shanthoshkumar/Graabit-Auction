@@ -1,0 +1,376 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="container">
+            <nav class="fixed-side-menu">
+                <ul class="fixed-side-menu-list">
+                    <li id="1">
+                        <a routerLink='/mydeals' (click)="setdealcontent(1)">MY ACTIVE DEALS <span class="badge badge-secondary" style="float: right">{{myActiveDealLength}}</span></a>
+                    </li>
+                    <!-- <li id="2">
+                        <a (click)="setdealcontent(2)">GRAABIT TOTAL
+BALANCE <br> <div style="font-size: 1.5rem; padding-top: 0.5rem">{{grabBalance}}</div>
+</a>
+                    </li>
+                    <li id="3">
+                        <a (click)="setdealcontent(3)">BUY BID PACKS</a>
+                    </li> -->
+                    <li id="4">
+                        <a routerLink='myexpdeals' (click)="setdealcontent(4)" >MY FINISHED DEALS<span class="badge badge-secondary" style="float: right">{{this.grab.myExpDealLength}}</span></a>
+                    </li>
+                    <li id="6">
+                        <a routerLink='/mydeals' (click)="setdealcontent(6)" >MY ACCOUNT</a>
+                    </li>
+                    <li id="7">
+                        <a routerLink='/mydeals' (click)="setdealcontent(7)" >MY BID LOGS</a>
+                    </li>
+                    <li>
+                            <a routerLink='/home' (click)="navigateToUpcoming()" >UPCOMING DEALS</a>
+                        </li>
+
+                </ul> 
+            </nav>
+            <br>
+        </div>
+
+    </div>
+    <div [ngSwitch]="mydealcontent" class="col-md-8">
+      <div *ngSwitchCase="1" >
+        <div *ngFor="let myDeal of myRegDealArray" class="col-md-6">
+            <app-mydealsproduct [MyActiveDeal]="myDeal" ></app-mydealsproduct>
+        </div>
+      </div>
+      <div *ngSwitchCase="2" >
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="heading">
+                      <h3>SELECT DEAL PACKS</h3>
+                  </div>
+              </div>
+      
+              <div class="col-md-6">
+                  <div class="well">
+                      <div class="row">
+                          <div class="col-md-3">
+                              <img src="../assets/images/s5.jpg" alt="" style="max-width: 100%">
+                          </div>
+                          <div class="col-md-9"> <br>
+                              <h3 class="text-secondary">1000 Rs | 20 DEALS</h3>
+      
+                          </div>
+      
+      
+                      </div>
+                  </div>
+                  <button class="btn btn-danger btn-block">EACH DEAL Price + 500 Rs</button>
+              </div>
+              <div class="col-md-6">
+                  <div class="well">
+      
+                      <div class="row">
+                          <div class="col-md-3">
+                              <img src="../assets/images/s6.jpg" alt="" style="max-width: 100%">
+                          </div>
+                          <div class="col-md-9"> <br>
+                              <h3 class="text-secondary">5000 Rs | 10 DEALS</h3>
+      
+                          </div>
+      
+      
+                      </div>
+                  </div>
+                  <button class="btn btn-danger btn-block">EACH DEAL Price + 500 Rs</button>
+              </div>
+          </div>
+      
+      
+          <br><br><br>
+          <div class="list-type5">
+              <ol>
+      
+                  <li><a >BUY DEAL PACK </a></li>
+                  <li><a >SELECT YOUR GRAB DEAL </a></li>
+                  <li><a >DEAL GOES LIVE IF ACTIVATED  </a></li>
+                  <li><a >BID FOR DEAL  </a></li>
+                  <li><a >END OF ACTIVE DEAL  </a></li>
+                  <li><a >HIGHEST BID WINS  </a></li>
+      
+              </ol>
+          </div>
+      </div>
+      <div *ngSwitchCase="3" >
+          <div class="row">
+               <div class="col-md-12">
+                   <div class="heading">
+                       <h3>SELECT DEAL PACKS</h3>
+                   </div>
+               </div> 
+               
+               <div class="col-md-6" style="margin-top: 20px">
+                   <div class="well">
+                       <div class="row">
+                           <div class="col-md-3">
+                               <img src="../assets/images/s5.jpg" alt="" style="max-width: 100%">
+                           </div>
+                           <div class="col-md-9"> <br>
+                               <h3 class="text-secondary">1000 Rs | 20 DEALS</h3>
+
+                           </div>
+
+
+                       </div>
+                   </div>
+                   <button class="btn btn-danger btn-block">EACH DEAL Price + 50 Rs</button>
+               </div>
+               <div class="col-md-6" style="margin-top: 20px">
+                   <div class="well">
+
+                       <div class="row">
+                           <div class="col-md-3">
+                               <img src="../assets/images/s5.jpg" alt="" style="max-width: 100%">
+                           
+                           </div>
+                           <div class="col-md-9"> <br>
+                               <h3 class="text-secondary">5000 Rs | 10 DEALS</h3>
+                           </div>
+
+
+                       </div>
+                   </div>
+                   <button class="btn btn-danger btn-block">EACH DEAL Price + 500 Rs</button>
+               </div>
+               
+               <div class="col-md-6" style="margin-top: 20px">
+                   <div class="well">
+                       <div class="row">
+                           <div class="col-md-3">
+                               <img src="../assets/images/s6.jpg" alt="" style="max-width: 100%">
+                              
+                           </div>
+                           <div class="col-md-9"> <br>
+                               <h3 class="text-secondary">10000 Rs | 20 DEALS</h3>
+
+                           </div>
+
+
+                       </div>
+                   </div>
+                   <button class="btn btn-danger btn-block">EACH DEAL Price + 500 Rs</button>
+               </div>
+               <div class="col-md-6" style="margin-top: 20px">
+                   <div class="well">
+
+                       <div class="row">
+                           <div class="col-md-3">
+                               <img src="../assets/images/s6.jpg" alt="" style="max-width: 100%">
+                           </div>
+                           <div class="col-md-9"> <br>
+                               <h3 class="text-secondary">15000 Rs | 5 DEALS</h3>
+
+                           </div>
+
+
+                       </div>
+                   </div>
+                   <button class="btn btn-danger btn-block">EACH DEAL Price + 3000 Rs</button>
+               </div>
+           </div>
+           
+       </div>   
+       <div *ngSwitchCase="4">
+   
+            <router-outlet></router-outlet>
+       </div>  
+
+       <div *ngSwitchCase="6" >
+            <div  class="row">
+                <!-- <div class="col-sm-1"></div> -->
+                <div class="col-sm-12">
+                    <div  style="margin-top: 20px">
+                        <div class="well">
+                            <button class="btn btn-danger btn-block">ACCOUNT DETAILS</button>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-11">
+                                    <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>User Name:</td>
+                                                    <td>{{ username }}</td>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>Email Id:</td>
+                                                    <td>{{ email }}</td>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>Grraabit Total Balance:</td>
+                                                    <td>{{ grabBalance }}</td>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>Blockchain Transaction Reference Address:</td>
+                                                    <td>{{ publickey }}</td>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>Auctions Participated:</td>
+                                                    <td>{{ paticipatedcount }}</td>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>Auctions Won:</td>
+                                                    <td>{{ woncount }}</td>
+                                                </tr>
+                                                <br>
+                                            </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+     
+                    </div>
+                </div>
+                <!-- <div class="col-sm-1"></div> -->
+            </div>
+            <div  class="row">
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-12">
+                        <div  style="margin-top: 20px">
+                            <div class="well">
+                                    <button class="btn btn-danger btn-block">PURCHASE BID PACKS</button>
+                                <div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-2">
+                                                    <button class="packbtn btn btn-danger btn-block">100 BID PACK</button>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="col-sm-2">
+                                                    <button class="packbtn btn btn-danger btn-block">300 BID PACK</button>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="col-sm-2">
+                                                    <button class="packbtn btn btn-danger btn-block">500 BID PACK</button>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="col-sm-2">
+                                                    <button class=" packbtn btn btn-danger btn-block">1000 BID PACK</button>&nbsp;
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="col-sm-2"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+         
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                </div>
+       </div>   
+       <div *ngSwitchCase="7">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <!-- <h5 class="panel-title">Bid Logs</h5> -->
+                <div class="heading-elements">
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-framed">
+                        <thead>
+                            <tr style="background-color:#17617e;color:#ffffff;">
+                                <th>Auction ID</th>
+                                <th>Product Name</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mybidlogsId">
+                            <p *ngIf="no_my_bid_logs" style="text-align:center"><br>No bid Logs</p>
+                            <tr *ngFor = "let history of bidhistory">
+                                <td>{{history.auctionid}}</td>
+                                <td>{{history.productname}}</td>
+                                <td>{{history.amount}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>  
+        
+       </div> 
+       <br/><br/>    
+    </div>
+
+</div>
+
+
+    <div class="modal fade" id="child_content_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle" style="padding-left: 10px">Products Description</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" ></div> 
+            <div class="col-md-12" style="padding:30px;">
+              <i id="descript"></i>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle" style="padding-left: 10px">BID History</h5>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              
+
+                  <div class="example-container mat-elevation-z8">
+                    <table class="table table-bordered" >
+                        <thead id='child'>
+                            <tr>
+                              <th>Sno</th>
+                              <th>User</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody id='child'>
+                                <tr *ngFor="let i of modal_content;let x=index">
+                                    <td>{{x+1}}</td>
+                                    <td>{{i.user}}</td>
+                                    <td>{{i.price}}</td>
+                                  </tr>     
+                                </tbody>
+                          </table>
+
+                    
+            </div>
+              </div>
+              <div class="col-sm-2"></div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+            <br>

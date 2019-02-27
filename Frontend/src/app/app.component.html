@@ -1,0 +1,245 @@
+<div>
+  <div class="banner-top container-fluid" id="home">
+      <marquee style="background-color: #17617e; color: #fff; padding: 10px"><span style="margin-left: 10vw; letter-spacing: 4px">Upto 95% discount for winners.</span> <span style="margin-left: 10vw; letter-spacing: 4px">Huge opportunity to grab deals.</span><span style="margin-left: 10vw; letter-spacing: 4px">Blockchain based platform.</span></marquee>
+      <header>
+          <div class="row">
+  
+              <div class="col-md-3 logo-grraabit text-left">
+                  <h1 class="logo-grraabit">
+                    <img routerLink="/home" src="../assets/images/icon.png" alt="" width="250px;">
+                  </h1>
+              </div>
+  
+              <div class="col-md-9 top-info-cart text-right mt-lg-4" style="padding-top: 50px">
+            <!-- user div  open-->
+
+                            <div *ngIf="!this.grab.isadmin"> 
+                            <ul class="cart-inner-info">
+                                <li class="button-log">
+                                    <a *ngIf="!this.grab.isLoggedIncheck" class="btn-open" routerLink="/home" href="" (click)="loginlayoutopen();clear_fields()"><span class="fa fa-user" aria-hidden="true"></span> Login</a>
+                                </li>
+                                <li class="button-log">
+                                    <a *ngIf="!this.grab.isLoggedIncheck" (click)="dismiss_login_notification()" routerLink="/signup"><span class="fa fa-user-plus" aria-hidden="true"></span> Signup</a> 
+                                </li>
+                                <li class="button-log">
+                                    <a (click)="loginnotifyshower()" routerLink="/mydeals"><span class="fa fa-camera" aria-hidden="true"></span> My Deals</a>
+                                </li>
+                                <li class="button-log">
+                                    <a (click)="dismiss_login_notification()"routerLink="/contactus"><span class="fa fa-question-circle" aria-hidden="true"></span> About Us</a>
+                                </li>
+                                <li class="button-log">
+                                    <a (click)="dismiss_login_notification()" routerLink="/howitworks"><span class="fa fa-question-circle" aria-hidden="true"></span> How it Works?</a>
+                                </li>
+                                <li class="button-log">
+                                    <a *ngIf="this.grab.isLoggedIncheck" routerLink="/signingout" (click)="signout()"><span class="" aria-hidden="true"></span> Signout</a> 
+                                </li>
+                            </ul>
+                            </div>
+
+            <!-- user div  close-->
+            <!-- owner div open -->
+
+                <div *ngIf="this.grab.isadmin">
+                <ul class="cart-inner-info">
+                    <li class="button-log">
+                        <a class="btn-open" routerLink="/createAuction"><span class="fa fa-user" aria-hidden="true"></span> Auction Creation</a>
+                    </li>
+                    <!-- <li class="button-log">
+                        <a routerLink="/signup"><span class="fa fa-user-plus" aria-hidden="true"></span> Select</a> 
+                    </li> -->
+                    <li class="button-log">
+                        <a routerLink="/sendcredits"><span class="fa fa-question-circle" aria-hidden="true"></span>Send Credits</a>
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/changeowner"><span class="fa fa-question-circle" aria-hidden="true"></span> Change Ownership</a>
+                    </li>
+                    <li class="button-log">
+                        <a routerLink="/setresult"><span class="fa fa-user-plus" aria-hidden="true"></span> Finalize</a> 
+                    </li>
+                    <li class="button-log">
+                            <a routerLink="/regdetails"><span class="fa fa-user-plus" aria-hidden="true"></span> Registration Details</a>
+                        </li>
+                    <li class="button-log">
+                        <a *ngIf="this.grab.isLoggedIncheck" routerLink="/signingout" (click)="signout()"><span class="" aria-hidden="true"></span> Signout</a> 
+                    </li>
+                </ul>
+            </div>
+
+            <!-- owner div close -->
+                  <!---->
+                  <div class="overlay-login text-left">
+                      <button type="button" class="overlay-close1">
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                      <div class="wrap">
+                          <h5 class="text-center mb-4">Login Now</h5>
+                          <div class="login p-5 mx-auto mw-100">
+                              <form>
+                                  <div class="form-group">
+                                      <label class="mb-2">Email address</label>
+                                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="" required="" autocomplete="off">
+                                  </div> 
+                                  <div class="form-group">
+                                      <label class="mb-2">Password</label>
+                                      <input type="password" class="form-control" id="password" placeholder="" required="" autocomplete="off">
+                                  </div>
+                                  <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                    </div>
+                                  <!-- <div class="form-group">
+                                        <label class="mb-2">Private Key</label>
+                                        <input type="text" class="form-control" id="privatekey" aria-describedby="emailHelp"> 
+                                        <small id="emailHelp" class="form-text" style="color: #fff">We'll never share your details with anyone else.</small>
+                                    </div> -->
+                                  <button (click)="login()" class="buttons">Sign In</button>
+  
+                              </form>
+                              <div class="alert alert-warning alert-dismissible" id="notify" *ngIf="notification">
+                                    <a (click)="dismiss_notification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong></strong>&nbsp;&nbsp;&nbsp;{{ error_message }}
+                             </div>
+                             <div>
+                                 new to Grraabit?    Click <span><a (click)="close_toggle()"style="color:white;text-decoration:underline;"routerLink="/signup">here</a></span>
+                             </div>
+                          </div>
+                          <!---->
+                      </div>
+  
+  
+  
+                      <h4 class="tittle-grraabit two text-center my-lg-4 mt-3" style="color: #fff">Deal Countdown</h4>
+                      <div class="simply-countdown-custom" id="simply-countdown-custom-1"></div>
+  
+  
+                  </div>
+                  <!---->
+              </div>
+          </div>
+  
+  
+  
+      </header>
+  
+      <!-- //header -->
+  
+  </div>
+  <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="alert alert-info alert-dismissible" *ngIf="loginnotification">
+            <a (click)="dismiss_login_notification()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Please Login to Continue...!</strong>&nbsp;&nbsp;&nbsp; 
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+  </div>
+
+  <div><router-outlet></router-outlet></div>
+  <!--footer py-lg-5-->
+  <footer class="py-3">
+      <div class="container-fluid px-lg-5 px-3">
+          <div class="row footer-top-grraabit">
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>About Us</h3>
+                  </div>
+                  <div class="footer-text">
+                      <p>GRAABIT IS A UNIQUE DEAL AUCTION PLATFROM OFFERING EXCLUSIVE AND GURANTEED DEALS FOR ALL PARTICIPANTS.</p>
+                      <ul class="footer-social text-left mt-lg-4 mt-3">
+  
+                          <li class="mx-2">
+                                <a href="https://www.facebook.com/">   
+                                    <span class="fab fa-facebook-f"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                                <a href="https://www.twitter.com/">
+                                  <span class="fab fa-twitter"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                                <a href="https://www.plus.google.com/">
+                                  <span class="fab fa-google-plus-g"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                                <a href="https://www.linkedin.com/">
+                                  <span class="fab fa-linkedin-in"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                                <a href="https://www.rss.com/">
+                                  <span class="fas fa-rss"></span>
+                              </a>
+                          </li>
+                          <li class="mx-2">
+                                <a href="https://www.wikipedia.com/">
+                                  <span class="fab fa-vk"></span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>Get in touch</h3>
+                  </div>
+                  <div class="contact-info">
+                      <h4>Location :</h4>
+                      <p>F7,1st floor, Swastik manandi, Arcade, SC road, Sheshadripuram.</p>
+                      <div class="phone">
+                          <h4>Contact :</h4>
+                          <p>Phone : +91 994 513 9900</p>
+                          <p>Email :
+                              <a href="support@grraabit.com">support@grraabit.com</a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 footer-grid-w3ls">
+                  <div class="footer-title">
+                      <h3>Quick Links</h3>
+                  </div>
+                  <ul class="links">
+                      <li>
+                          <a (click)="scrollup()" routerLink="/home">Home</a>
+                      </li>
+                      <li class="button-log">
+                            <a *ngIf="!this.grab.isLoggedIncheck" class="btn-open" routerLink="/home" href="" (click)="loginlayoutopen();clear_fields()" aria-hidden="true">Login</a>
+                        </li>
+                      <li>
+                          <a *ngIf="!this.grab.isLoggedIncheck" (click)="scrollup()" routerLink="/signup">Signup</a>
+                      </li>
+                      <li>
+                          <a *ngIf="!this.grab.isadmin" (click)="scrollup();loginnotifyshower();" routerLink="/mydeals">My Deals</a>
+                      </li>
+                      <li>
+                          <a (click)="scrollup()" routerLink="/terms">Terms and Conditions</a>
+                      </li>
+                      <li>
+                        <a *ngIf="this.grab.isLoggedIncheck" (click)="scrollup()" routerLink="/signingout" (click)="signout()">SignOut</a>
+                    </li>
+                      
+  
+                  </ul>
+              </div>
+  
+          </div>
+          <div class="copyright-grraabit mt-4">
+              <p class="copy-right text-center ">&copy; 2018 grraabit. Powered by
+                  <a href="https://ajnasoft.com/">Ajnasoft </a>
+              </p>
+          </div>
+      </div>
+  </footer>
+  <!-- //footer -->
+  
+  
+ 
+  <!--// end-smoth-scrolling -->
+  <!-- js file -->  
+</div>
+<ng4-loading-spinner [timeout]="10000000" [loadingText]="'Please Wait Your Transaction Is Processing...'"></ng4-loading-spinner>
+
+

@@ -1,0 +1,75 @@
+<div *ngIf="!auctionExpired">
+       <br>
+            <div class="well">
+                <div class="heading">
+                    <h4><span *ngIf="!minimumBiddersNotMeet">ACTIVE</span> {{product_name}} DEAL <br> 
+
+                      <!-- <span *ngIf="myDeal.ismeetrequired && !myDeal.waitforlive"> -->
+                          <h5 *ngIf="auctionLive"> {{ displayTime }} left</h5>
+                      <!-- </span> -->
+                    </h4>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src={{ipfs}} alt="" style="max-width: 100%">
+                    </div>
+                    <div class="col-md-9"> <br>
+                        <h4 class="text-secondary">{{product_name}}</h4>
+                        <h4><span class="text-muted">Bid Type:{{bidincrement}}</span></h4>
+                        <h4 class="text-muted">Base Price:{{basePrice}}</h4>
+
+                        <div *ngIf="!auctionWait">
+                          <p *ngIf="!minimumBiddersNotMeet" class="text-muted">Bid Reset Time: {{resettime}} </p>
+                          <p *ngIf="!minimumBiddersNotMeet" class="text-muted">Highest Deal : {{highestbidamount}} </p>
+                          <p *ngIf="!minimumBiddersNotMeet">Bidder: {{Bidder_name}}</p>
+                          <p *ngIf="minimumBiddersNotMeet"> Auction Can't be started due to Minimum Bidders not reached ({{registered}}/{{required}}). <br>Your Registeration Amount will be Refunded</p>
+                        </div>
+                        <div *ngIf="auctionReg">
+                            <div *ngIf ="!isRegPending">
+                                    <p><strong></strong>Registration will be close @ </p><h5>{{ displayTime }}</h5>
+                            </div>
+                            <div *ngIf ="isRegPending">
+                                    <p>Your Transaction Is In Progress ...</p>
+                            </div>
+                          <!-- <div *ngIf="myDeal.soonlivetimerdecide==2">
+                              <p>You can bid this deal @ {{myDeal.auctionstarttime}}</p>
+                          </div> -->
+                        </div>
+                        <div *ngIf="auctionWait">
+                            <div>
+                              <p>Auction Will be live in <span>
+                                <h5> {{ displayTime }}</h5></span></p>
+                            </div>
+                                <div *ngIf ="isRegPending">
+                                    <p>Your Transaction Is In Progress ...</p>
+                                </div>
+                          </div>
+                        <br>
+                        <div *ngIf="bidder_message" class="alert alert-info col-sm-8">
+                            <a href="#" class="close" data-dismiss="alert" (click)='hideMsg();' aria-label="close">&times;</a>
+              <strong>{{ bidder_message_content }}!</strong>
+            </div>
+                <div *ngIf="isTxProgressing">
+                        <p>Your Transaction Is In Progress ...</p>
+                </div>
+                    </div>
+
+                    <br><br>
+
+                </div>
+                <div class="row text-right">
+
+                    <div class="col-md-12">
+                        <button class="btn btn-danger"  (click)="bid_details()" >MORE DETAILS</button>                          
+                        <!-- <button class="btn btn-danger">DISCOUNT FEATURES</button>  data-toggle="modal" href="#exampleModalCenter" --> 
+
+                    </div>
+                </div>
+               
+            </div>
+            <div *ngIf="auctionLive">
+                  <button *ngIf="!minimumBiddersNotMeet && auctionLive && btnShow" class="btn btn-danger btn-block" (click)="manualBidding()"> {{ bid_amount }} BID NOW</button>
+            </div>
+            <br>
+</div>

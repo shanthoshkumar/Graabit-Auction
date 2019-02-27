@@ -1,0 +1,137 @@
+<div class="container">
+        <div class="row">
+                <div class="col-sm-6">
+
+        <div class="form-style-10">
+                        <h1 style="text-align: center">{{ title }} Auction</h1>
+                        <div *ngIf="auctionnotify==1" class="alert alert-success alert-dismissible" >
+                                <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> Auction Successfully Created.
+                        </div>
+                        <div class="form-group">
+                                <div class="section">Product Name</div>
+                                <div class="inner-wrap">
+                                <label>Please Enter A Name <input type="text" name="field1" id="productname" #productname autocomplete="off"/></label>
+                                </div>
+                                
+                                <div *ngIf="imgagefield">
+                                        <div class="section">Choose Image </div>
+                                        <div class="inner-wrap">
+                                        <label>Choose .PNG Format<input type="file" name="media_empty"  class="form-control"  id="fileInput" (change)="onFileChanged($event)" accept="image/png,"></label>                            
+                                        </div>
+                                        <div class="section">Product Description</div>
+                                        <div class="inner-wrap">
+                                        <label>Enter More Details About The Product <textarea id="productdescription" ></textarea></label>
+                                 </div>
+                                </div>
+
+                
+                                <div class="section">Registration Start Time</div>
+                                <div class="inner-wrap">
+                                        <input type="datetime-local" class="form-control" id="regstarttime" #rgstarttime autocomplete="off" >
+                                </div>
+                                <div class="section">Registration End Time</div>
+                                <div class="inner-wrap">
+                                        <input type="datetime-local" class="form-control" id="regendtime" #rgendtime  autocomplete="off" >
+                                </div>
+                                <div class="section">Auction Start Time</div>
+                                <div class="inner-wrap">
+                                        <input type="datetime-local" class="form-control" id="starttime" #start autocomplete="off" >
+                                </div>
+                                <div class="section">Auction End Time</div>
+                                <div class="inner-wrap">
+                                        <input type="datetime-local" class="form-control" id="endtime" #end autocomplete="off" >
+                                </div>
+                                <div class="section">Base Price</div>
+                                <div class="inner-wrap">
+                                        <label>Enter Base Price <input type="text" name="field5" id="baseprice" #baseprice autocomplete="off"/></label>
+                                </div>
+                
+                                <div class="section">Bid Increment</div>
+                                <div class="inner-wrap">
+                                        <label>Enter Bid Increment <input type="text" name="field5" id="bidincrement" #bidincrement autocomplete="off"/></label>
+                                </div>
+                
+                                <div class="section">Minimum Bid</div>
+                                <div class="inner-wrap">              
+                                <label>Enter Minimum Price <input type="text" name="field5" id="minimumbid" #minimumbid autocomplete="off" /></label>
+                                </div>
+                
+                                
+                
+                                <div class="section">Minimum Bidders</div>
+                                <div class="inner-wrap">
+                                        <label>Enter Bid Increment <input type="text" name="field5" id="minimumbidders" #minbidders autocomplete="off"/></label>
+                                </div>
+                                
+                                <div class="section">Bid Reset Time</div>
+                                <div class="inner-wrap">
+                                        <label>Enter Bid Reset Time <input type="text" name="field5" id="resettime" #resettime autocomplete="off" /></label>
+                                </div>
+                
+                                <div *ngIf="auctionnotify==2" class="alert alert-danger alert-dismissible">
+                                <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Invalid Credentials!</strong> 
+                                </div>
+                                <div *ngIf="auctionnotify==3" class="alert alert-danger alert-dismissible" >
+                                        <a (click)="alertClose()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Transaction Failed!</strong> 
+                                </div>
+                                <div *ngIf="minimumbid_error" class="alert alert-info alert-dismissible" >
+                                        <a (click)="dismiss_minimumbid_error()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Minimum Bid Must be greater or equal to Bid Increment!</strong> 
+                                </div>
+                                <div *ngIf="baseprice_error!=''" class="alert alert-info alert-dismissible" >
+                                        <a (click)="dismiss_baseprice_error()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Base Price Atleast needs to be {{ baseprice_error }}</strong> 
+                                </div>
+                                <div *ngIf="reset_time_error" class="alert alert-info alert-dismissible" >
+                                        <a (click)="dismiss_reset_time_error()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Reset time must be greater than 0</strong> 
+                                </div>
+                                <div *ngIf="bid_increment_error" class="alert alert-info alert-dismissible" >
+                                        <a (click)="dismiss_bid_increment_error()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Bid Increment Must Be Greater than 0!</strong> 
+                                </div>
+                                <div *ngIf="checktimeerror" class="alert alert-info alert-dismissible" >
+                                        <a (click)="dismiss_checktimeerror()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Please Select Time Correctly</strong> 
+                                </div>
+                                <br><br><br>
+                                <div class="button-section" style="text-align: center">
+                                <input *ngIf="!btnname" type="button" (click)="upload(productname.value,start.value,end.value,baseprice.value,bidincrement.value,minimumbid.value,resettime.value,rgstarttime.value,rgendtime.value,minbidders.value)" value="Create" />
+                                <input *ngIf="btnname" type="button" (click)="clone(productname.value,start.value,end.value,rgstarttime.value,rgendtime.value)" value="Clone" />
+                                <input type="button" style="margin-left: 10px" (click)="reset_form()" value='Cancel' />
+
+                                </div>
+                        </div>
+                        </div>
+                        
+                </div>
+
+<div class="col-sm-6">
+<div class="table-responsive " style="overflow: auto;max-height:800px;text-align: center">
+        <h6 style="text-transform: uppercase;">you want to clone an auction. please click on one of the auction listed below.</h6>
+        <table class="table table-bordered table-framed table-striped">
+        <thead style="background-color: #17617e">
+        <tr>
+                <th style="color:white"><h4>Auction Id</h4></th>
+                <th style="color:white"><h4>Auction Name</h4></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="trhighlighting" *ngFor="let element of selected_aid">
+                <td>{{ element.auctionId }}</td>
+                <!-- <td></td> -->
+                <td><button type="button" class="btn btn-warning " style="background-color: #17617e"  value="select" (click)="setdetails(element.auctionId)">{{ element.productname }}</button></td>
+        </tr>
+        </tbody>
+        </table>
+</div>                                   
+</div>
+
+        
+                
+        </div>
+     </div> 

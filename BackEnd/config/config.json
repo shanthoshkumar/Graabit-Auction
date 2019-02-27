@@ -1,0 +1,14 @@
+{
+    "development": {
+        "PORT": 3231,
+        "MONGODB_URI": "mongodb+srv://grabit_admin:Grabit_123@cluster0-u4eqy.mongodb.net/GrabitAuction",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1d"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb+srv://grabit_admin:Grabit_123@cluster0-u4eqy.mongodb.net/GrabitAuction",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "1d"
+    }
+}
